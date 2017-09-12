@@ -4,7 +4,7 @@
 
     class KWatermark{
 
-        function watermark_handler( $params, $node ){
+        static function watermark_handler( $params, $node ){
             global $FUNCS, $Config;
             if( count($node->children) ) {die("ERROR: Tag \"".$node->name."\" is a self closing tag");}
 
@@ -68,7 +68,7 @@
 
         }
 
-        function _create_watermarked_image( $image, $with, $at, $save_as ){
+        static function _create_watermarked_image( $image, $with, $at, $save_as ){
             global $FUNCS;
 
             ini_set('memory_limit', "128M");
